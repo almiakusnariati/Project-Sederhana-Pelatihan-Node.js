@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Add Medicine</title>
+  </head>
+  <body>
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href="">Apotek Miiii</a></div>
+            <div class="menu">
+                <ul >
+                    <li><a class="tbl-biru" href="http://localhost:3000/halaman/">Back</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section>
+      <div class="container-insert">
+        <div class="body-insert">
+          <form class="insert" name="insert" enctype="multipart/form-data">
+            <h1>Add Medicine</h1>
+            <hr>
+            <input type="text" name="nama_obat" placeholder="Nama obat" required autofocus />
+            <input type="text" name="harga_obat" placeholder="Harga Obat" required />
+            <input type="text" name="kode_obat" placeholder="Kode Obat" required />
+            <input type="text" name="stok_obat" placeholder="Stok Obat" required /> 
+            <br>
+            <input type="file" name="photo" />
+            <button>Save</button>
+          </form>
+          <div class="right"><img src="../gmr.png" alt=""></div>
+        </div>
+    
+      </div>
+
+  
+    </section>
+    <script>
+      document.insert.onsubmit = async (e) => {
+        e.preventDefault();
+        const data = new FormData();
+        data.append("nama_obat", document.insert.nama_obat.value);
+        data.append("harga_obat", document.insert.harga_obat.value);
+        data.append("kode_obat", document.insert.kode_obat.value);
+        data.append("stok_obat", document.insert.stok_obat.value);
+        data.append("foto", document.insert.photo.files[0]);
+
+
+          try {
+          const response = await fetch("/api/obat", {
+          method: "POST",
+          body: data,
+        });
+      if (!response.ok) {
+      throw new Error("Gagal menambahkan obat");
+    }
+
+    alert("Data Berhasil Ditambahkan.");
+    location.href = "/dashboard/details";
+  } catch (error) {
+    console.error("Terjadi kesalahan:", error);
+  }
+};
+    </script>
+  </body>
+
+
+</html>

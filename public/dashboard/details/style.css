@@ -1,0 +1,273 @@
+*{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family:'open Sans',sans-serif;
+    overflow-x: hidden;
+    background-color: #6c77ca;
+}
+.wrapper{
+    width: 1100px;
+    margin: auto;
+    position: relative;
+}
+
+.logo{
+    font-size: 50px;
+    font-weight: 800;
+    float: left;
+    font-family: Courier;
+    color: #510818;
+}
+
+.logo a{
+    color: #0b041e;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.menu{
+    float: right;
+
+}
+section{
+    margin: auto;
+    display: flex;
+    margin-bottom: 80px;
+}
+
+
+nav{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    line-height: 80px;
+    position: sticky;position: -webkit-sticky;
+    top: 0;
+    background-color: rgb(86, 111, 211);
+    z-index: 1;
+    border-bottom: 1 solid black;
+}
+nav ul {
+    list-style: none;
+    margin: 0;padding: 0;
+    overflow: hidden;
+}
+nav ul li{
+    float: left;
+}
+
+nav ul li a{
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 16 px 0px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+}
+
+a.tbl-biru{
+    background-color: rgb(69, 49, 244);
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.tbl-biru:hover{
+    background-color:rgb(5, 22, 154) ;
+    text-decoration: none;
+}
+.tbl-biru{
+    background-color: rgb(49, 70, 188) ;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tbl-biru:hover{
+    background-color:#605dc9 ;
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+tr,th{
+    padding: 15px;
+}
+
+thead{
+    background-color: rgb(17, 43, 212);
+}
+tbody{
+    text-align: center;
+    background-color: whitesmoke;
+}
+.img-produk {
+    width: 200px;
+    height: 200px;
+
+}
+
+
+@media screen and (max-width:991.98px){
+    footer{
+       margin: 0px;
+    }
+}
+
+/* Responsif untuk perangkat mobile */
+@media screen and (max-width: 767px) {
+    .wrapper {
+      width: 90%;
+    }
+  
+    .logo {
+      font-size: 40px;
+    }
+  
+    nav ul li a {
+      padding: 10px;
+    }
+  }
+  
+  /* Tata letak navigasi */
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+  }
+  
+  /* Tabel */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  
+  table th, table td {
+    padding: 12px;
+  }
+  
+  thead {
+    background-color: #6461aa;
+    color: white;
+  }
+  
+  tbody tr:hover {
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Penataan umum */
+  body {
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+    background-color: #a8acc9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .wrapper {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  .logo {
+    font-size: 50px;
+    font-weight: 800;
+    font-family: Courier;
+    color: #510818;
+  }
+  
+  .logo a {
+    color: #0b041e;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #3974b8;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: #6461aa;
+  }
+  
+
+/* Mengubah warna latar belakang */
+body {
+    background-color: #a8acc9; 
+  }
+  
+  /* Mengubah warna latar belakang navigasi */
+  nav {
+    background-color: #7a8bc5; 
+  }
+  
+  /* Mengubah warna latar belakang header tabel */
+  thead {
+    background-color: #7a8bc5; 
+  }
+  
+  /* Mengubah warna latar belakang saat hover pada baris tabel */
+  tbody tr:hover {
+    background-color: #d8d8f0; 
+  }
+  
+  /* Mengubah warna teks pada link */
+  a {
+    color: #235b92; 
+  }
+  
+  /* Mengubah warna teks pada link saat dihover */
+  a:hover {
+    color: #4b7cbc; 
+  }
+  
+  /* Menyesuaikan warna tombol biru */
+  a.tbl-biru,
+  .tbl-biru {
+    background-color: #6fa2d8; 
+  }
+  
+  /* Menyesuaikan warna tombol biru saat dihover */
+  a.tbl-biru:hover,
+  .tbl-biru:hover {
+    background-color: #8eb9e0; 
+  }
+  
+  /* Mengubah warna latar belakang pada bagian tbody */
+  tbody {
+    background-color: #f0f0f5; 
+  }
+
+  td img {
+    max-width: 150px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+  }
+
+  

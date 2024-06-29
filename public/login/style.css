@@ -1,0 +1,73 @@
+/* style.css */
+body {
+    margin: 0;
+    padding: 0;
+    background: url('../foto/2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+form {
+    width: 300px;
+    margin: 40px;
+    padding: 40px;
+    background-color: rgba(56, 154, 187, 0.8); /* Warna biru muda dengan tingkat transparansi */
+    border-radius: 40px;
+    position: relative; 
+}
+
+h2 {
+    text-align: center;
+    color: #09509ce3; 
+    position: absolute; 
+    top: -10px; 
+    left: 50%; /* Menetapkan posisi horizontal ke tengah */
+    transform: translateX(-50%); /* Menggeser ke kiri setengah lebar elemen h2 */
+    z-index: 1; /* Mengatur z-index agar teks "REGISTER" berada di depan formulir */
+}
+
+label {
+    font-size: 16px;
+    color: #333; /* Warna teks biru tua */
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 97%;
+    background-color: #1f82a9; /* Warna biru muda */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Tambahkan margin-bottom untuk memberikan ruang antara tombol dan tautan */
+}
+
+button:hover {
+    background-color: #327e81;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.back-link a {
+    color: #0b0a0a; /* Warna teks biru tua */
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data</title>
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="wrapper">
+          <div class="logo">Remove Medication<a href=""></a></div>
+          <div class="menu">
+              <ul >
+                  <li><a class="tbl-biru" href="http://localhost:3000/halaman/">Back</a></li>
+              </ul>
+          </div>
+      </div>
+     </nav> 
+     <section>
+      <table border="2">
+        <thead>
+          <tr>
+            <th>Nama Obat</th>
+            <th>Harga Obat</th>
+            <th>Kode obat</th>
+            <th>stok obat</th>
+            <th>foto</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+  
+     </section>
+    <script>
+
+      fetch("/api/obat", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          for (let i = 0; i < data.length; i++) {
+            const tr = document.createElement("tr");
+
+            const tdNim = document.createElement("td");
+            tdNim.textContent = data[i].nama_obat;
+            tr.appendChild(tdNim);
+
+            const tdName = document.createElement("td");
+            tdName.textContent = "Rp."+data[i].harga_obat;
+            tr.appendChild(tdName);
+
+            const kode= document.createElement("td");
+            kode.textContent = data[i].kode_obat;
+            tr.appendChild(kode);
+
+            const stok= document.createElement("td");
+            stok.textContent = data[i].stok_obat;
+            tr.appendChild(stok);
+
+            const tdPhoto = document.createElement("td");
+            const imgPhoto = document.createElement("img");
+            imgPhoto.className="img-produk"
+            imgPhoto.src = `/photos/${data[i].foto}`;
+            tdPhoto.appendChild(imgPhoto);
+            tr.appendChild(tdPhoto);
+
+           
+
+            const tdDelete = document.createElement("td");
+            const buttonDelete = document.createElement("button");
+            buttonDelete.className="tbl-biru";
+            buttonDelete.textContent = "Delete";
+            buttonDelete.onclick = () => {
+              if (
+                confirm(
+                  `Apakah  yakin ingin menghapus ${data[i].nama_obat} (${data[i].kode_obat})?`
+                )
+              ) {
+                fetch(`/api/obat/${data[i].id}`, {
+                  method: "DELETE",
+                  headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                  },
+                });
+                location.reload();
+              }
+            };
+            tdDelete.appendChild(buttonDelete);
+            tr.appendChild(tdDelete);
+
+            document.querySelector("tbody").appendChild(tr);
+          }
+        });
+    </script>
+    
+  </body>
+
+
+</html>

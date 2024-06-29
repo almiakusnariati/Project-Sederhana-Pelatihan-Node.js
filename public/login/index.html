@@ -1,0 +1,64 @@
+<!-- public/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>LOGIN</title>
+</head>
+<body>
+    <!-- public/login.html -->
+        <form name="login" action="/api/login" method="POST" style="display: flex; flex-direction: column; gap: 10px;">
+        <h2>LOGIN</h2>
+        <label for="username">Username</label>
+        <input name="username" type="text" placeholder="Enter your username">
+
+        <label for="password">Password</label>
+        <input name="password" type="password" placeholder="Enter your password">
+
+        <div class="back-link">
+            <a href="../register/index.html">Belum punya akun? Daftar di sini.</a>
+        </div>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    
+    
+
+    <script>
+  document.querySelector("form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const username = document.login.username.value;
+    const password = document.login.password.value;
+
+    try {
+        const response = await fetch("/api/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                username,
+                password,
+            }),
+        });
+
+        console.log(response.ok);
+        if (response.ok) {
+            const data = await response.json();
+            const  token  = data;
+                location.href = "/halaman";
+        } else {
+            const message = await response.text();
+            alert(message);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+});
+    </script>
+</body>
+</html>

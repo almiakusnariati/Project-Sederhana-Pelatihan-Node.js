@@ -1,0 +1,227 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+  background-color: #bcb6db;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #7a88da;
+  color: white;
+  padding: 10px 0;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0px;
+  margin-top: 10px;
+}
+
+/* Main content styling */
+#body-div {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.product-details {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  flex: 1 1 300px;
+  max-width: 300px;
+}
+
+.product-details img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+}
+
+.product-details h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+.product-details p {
+  margin-bottom: 8px;
+  color: #666;
+}
+
+/* Table styling */
+.product-details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.product-details th,
+.product-details td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.product-details th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+.product-details td {
+  color: #666;
+}
+
+.product-details img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main content styling */
+#body-div {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-details {
+  background-color: #ebe1e1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Table styling */
+.product-details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.product-details th,
+.product-details td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.product-details th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+.product-details td {
+  color: #777575;
+}
+
+.product-details img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Back button styling */
+.menu ul {
+  display: flex;
+  justify-content: flex-end; /* Menggeser tombol ke kanan */
+  align-items: center;
+  margin-top: 20px;
+}
+
+.menu ul li {
+  margin-left: 20px; /* Memberi jarak antar item */
+}
+
+.menu ul li:first-child {
+  margin-left: auto; /* Menggeser tombol kembali ke kanan */
+}
+
+/* Back button styling */
+.menu ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+  padding-right: 20px; /* Tambahkan padding untuk memberikan ruang di sekitar tombol */
+}
+
+.menu ul li {
+  margin-left: 20px;
+}
+
+.menu ul li:first-child {
+  margin-left: auto;
+}
+
+.menu ul li a {
+  padding: 8px 15px; /* Atur padding sesuai kebutuhan */
+  border-radius: 5px;
+  background-color: #6776c8;
+  color: white;
+  text-decoration: none;
+}
+
+/* Untuk membuat tombol responsif */
+@media screen and (max-width: 768px) {
+  .menu ul {
+    padding-right: 10px; /* Ubah padding untuk layar yang lebih kecil */
+  }
+
+  .menu ul li a {
+    font-size: 14px; /* Atur ulang ukuran font untuk responsif */
+    padding: 6px 10px; /* Atur ulang padding untuk responsif */
+  }
+}

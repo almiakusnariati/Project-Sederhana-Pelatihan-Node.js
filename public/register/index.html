@@ -1,0 +1,50 @@
+<!-- public/register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Register</title>
+</head>
+<body>
+    <!-- public/register.html -->
+    <form name="register" style="display: flex; flex-direction: column; gap: 10px;">   
+        <h2>REGISTER</h2>
+        <label >Username</label>
+        <input name="username" type="text" placeholder="Enter your username" required>
+
+        <label >Password</label>
+        <input name="password" type="password" placeholder="Enter your password" required>
+
+        <div class="login-link">
+            <a href="../login/index.html">Sudah punya akun? Login di sini.</a>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        document.register.onsubmit = async (e) => {
+            e.preventDefault();
+            const username = document.register.username.value;
+            console.log(username);
+            const password=document.register.password.value;
+            await fetch("/api/register", {
+                method: "POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    username,
+                    password,
+                }),
+            });
+
+            alert("Akun Anda Sudah Terdaftar.");
+            location.href = "/login";
+        };
+         </script>
+</body>
+</html>
+
+

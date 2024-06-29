@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail </title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <nav>
+    <div class="wrapper">
+      <div class="logo"><a href="">Details Medicine</a></div>
+      <div class="menu">
+        <ul>
+          <li><a class="tbl-biru" href="http://localhost:3000/halaman/">Back</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div id="body-div">
+      <table class="product-details">
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </main>
+  <script>
+    const tableBody = document.getElementById("table-body");
+    const searchParams = new URLSearchParams(location.search);
+
+    fetch(`/api/obat/${searchParams.get("id")}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      const tableRows = `
+        <tr>
+          <th>Nama Obat</th>
+          <td>${data.nama_obat}</td>
+        </tr>
+        <tr>
+          <th>Harga Obat</th>
+          <td>RP.${data.harga_obat}</td>
+        </tr>
+        <tr>
+          <th>Kode Obat</th>
+          <td>${data.kode_obat}</td>
+        </tr>
+        <tr>
+          <th>Stok Obat</th>
+          <td>${data.stok_obat}</td>
+        </tr>
+        <tr>
+          <th>Foto</th>
+          <td><img src="/photos/${data.foto}" class="img-produk" alt="Foto Obat"></td>
+        </tr>
+      `;
+      tableBody.innerHTML = tableRows;
+    });
+  </script>
+</body>
+</html>

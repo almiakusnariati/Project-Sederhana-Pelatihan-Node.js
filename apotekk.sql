@@ -1,0 +1,40 @@
+CREATE DATABASE apotekk;
+USE apotekk
+
+CREATE TABLE `akun` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(50) NOT NULL,
+  `password` CHAR(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `akun`;
+
+
+LOCK TABLES `akun` WRITE;
+
+INSERT  INTO `akun`(`id`,`username`,`password`) VALUES 
+(62,'almia','12345');
+
+UNLOCK TABLES;
+
+CREATE TABLE `obat` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `nama_obat` VARCHAR(50) DEFAULT NULL,
+  `harga_obat` CHAR(50) NOT NULL,
+  `kode_obat` CHAR(10) NOT NULL,
+  `stok_obat` INT(12) DEFAULT NULL,
+  `foto` VARCHAR(32) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4;
+
+LOCK TABLES `obat` WRITE;
+
+
+INSERT  INTO `obat`(`id`,`nama_obat`,`harga_obat`,`kode_obat`,`stok_obat`,`foto`) VALUES 
+(68,'SUPRAMAX','45.000','001',400,'supramox.jpg'),
+(69,'RYVEL CETIRIZINE DIHYDROCHLORIDE','26.000','002',100,'RYVEL CETIRIZINE DIHYDROCHLORIDE.jpg'),
+(70,'LORATADINE','30.000','003',30,'LORATADINE.jpg'),
+(71,'KAFLAM.jpg','45.000','004',50,'KAFLAM.jpg'),
+(72,'DISFLATYI','15.000','005',30,'DISFLATYI.JPG'),
+(73,'DEXTEEM PLUS','9.000','008',50,'DEXTEEM PLUS.jpg');
